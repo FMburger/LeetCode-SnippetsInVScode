@@ -1,0 +1,13 @@
+{
+	"Find the distance between any two points on x-axis": {
+		"prefix": "distancebetweentwopointsonxasix",
+		"body": [
+		  "SELECT",
+		  "    ABS($1.x - $2.x) AS shortest",
+		  "FROM point $1",
+		  "JOIN point $2",
+		  "    ON $1.x != $2.x"
+		],
+		"description": "Find the distance between any two points on x-axis"
+	  }
+}
