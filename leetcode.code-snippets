@@ -9,5 +9,20 @@
 		  "    ON ${1:startingPoint}.x != ${2:endingPoint}.x"
 		],
 		"description": "Find the distance between any two points on x-axis"
-	}
+	},
+	"sex change": {
+		"prefix": "sexchange",
+		"body": [
+		  "UPDATE",
+		  "    ${1:tableName}",
+		  "SET ${2:columnName} = ",
+		  "(",
+		  "    CASE",
+		  "        WHEN ${2:columnName} = '${3:male}' THEN '${4:female}'",
+		  "        WHEN ${2:columnName} = '${4:female}' THEN '${3:male}'",
+		  "    END",
+		  ")"
+		],
+		"description": "sex change"
+	}	
 }
